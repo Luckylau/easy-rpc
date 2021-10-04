@@ -1,0 +1,21 @@
+#.travis.yml
+language: java
+
+dist: trusty
+
+jdk:
+  - oraclejdk8
+
+cache:
+  directories:
+    - $HOME/.m2
+
+install:
+  - ./mvnw clean install -Pci-install -B -U -e
+  - bash ./tools/check_format.sh
+
+script:
+  - ./mvnw package -Pci-test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

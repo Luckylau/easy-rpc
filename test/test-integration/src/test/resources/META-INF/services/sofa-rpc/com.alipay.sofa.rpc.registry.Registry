@@ -1,0 +1,2 @@
+mocktest=com.alipay.sofa.rpc.registry.MockTestRegistry
+mocktestslow=com.alipay.sofa.rpc.registry.MockTestSlowRegistry
